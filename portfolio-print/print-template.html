@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PROJECT_TITLE}} - Print Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../print-styles.css">
+</head>
+<body>
+    <!-- Page 1: Project Overview with Hero and Details -->
+    <div class="page page-1">
+        <div class="page-header">
+            <h1 class="portfolio-name">Michael Bruner</h1>
+            <div class="header-line"></div>
+        </div>
+        
+        <div class="page-content">
+            <div class="hero-section">
+                <div class="hero-image" style="background-image: url('{{HERO_IMAGE}}');"></div>
+                <div class="hero-overlay">
+                    <h2 class="project-title">{{PROJECT_TITLE}}</h2>
+                    <p class="project-subtitle">{{PROJECT_SUBTITLE}}</p>
+                </div>
+            </div>
+            
+            <div class="details-section">
+                <div class="project-description">
+                    <h3>About</h3>
+                    <div class="description-text">
+                        {{PROJECT_DESCRIPTION}}
+                    </div>
+                </div>
+                
+                <div class="project-metadata">
+                    <div class="metadata-column">
+                        <div class="metadata-item">
+                            <h4>Role</h4>
+                            <p>{{PROJECT_ROLE}}</p>
+                        </div>
+                        <div class="metadata-item">
+                            <h4>Technologies</h4>
+                            <p>{{PROJECT_TECH}}</p>
+                        </div>
+                    </div>
+                    <div class="metadata-column">
+                        <div class="metadata-item">
+                            <h4>Collaborators</h4>
+                            <p>{{PROJECT_COLLABORATORS}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <p>{{PROJECT_TITLE}}</p>
+            <p class="page-number">1</p>
+        </div>
+    </div>
+    
+    <!-- Page 2: Project Gallery -->
+    <div class="page page-2">
+        <div class="page-header">
+            <h1 class="portfolio-name">Michael Bruner</h1>
+            <div class="header-line"></div>
+        </div>
+        
+        <div class="page-content">
+            <h3 class="gallery-title">Project Gallery</h3>
+            <div class="gallery-grid">
+                {{GALLERY_IMAGES}}
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <p>{{PROJECT_TITLE}}</p>
+            <p class="page-number">2</p>
+        </div>
+    </div>
+</body>
+</html>
