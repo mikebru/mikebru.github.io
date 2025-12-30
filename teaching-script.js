@@ -116,6 +116,7 @@ let currentItemIndex = 0;
 let lightbox;
 let lightboxContent;
 let lightboxMediaContainer;
+let lightboxCaption;
 let closeButton;
 let prevButton;
 let nextButton;
@@ -128,6 +129,7 @@ function initGallery() {
     lightbox = document.querySelector('.lightbox');
     lightboxContent = document.querySelector('.lightbox-content');
     lightboxMediaContainer = document.querySelector('.lightbox-media-container');
+    lightboxCaption = document.querySelector('.lightbox-caption');
     closeButton = document.querySelector('.close-lightbox');
 
     // Add navigation buttons to lightbox if they don't exist
@@ -226,6 +228,16 @@ function openLightboxWithItem(index) {
 
     // Clear previous content
     lightboxMediaContainer.innerHTML = '';
+    lightboxCaption.innerHTML = '';
+
+    // Get caption from gallery item
+    const captionElement = item.querySelector('.gallery-caption p');
+    if (captionElement) {
+        const captionText = captionElement.textContent;
+        if (captionText) {
+            lightboxCaption.innerHTML = `<p>${captionText}</p>`;
+        }
+    }
 
     // Prepare content based on item type
     if (item.classList.contains('image')) {
@@ -335,5 +347,6 @@ function closeLightbox() {
     // Clear content after animation completes
     setTimeout(() => {
         lightboxMediaContainer.innerHTML = '';
+        lightboxCaption.innerHTML = '';
     }, 300);
 }
